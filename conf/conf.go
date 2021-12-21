@@ -5,10 +5,14 @@ import (
 	"github.com/spf13/viper"
 )
 
-func Init() {
+var LoginInfo map[string]string
+
+func init() {
 	viper.SetConfigName("conf")
 	viper.AddConfigPath("./")
 	if err := viper.ReadInConfig(); err != nil {
 		log.Panic(err)
 	}
+
+	LoginInfo = viper.GetStringMapString("sql")
 }
