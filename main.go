@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"LinkedTo-go/controller"
+)
 
 func main() {
-	fmt.Println("Hello world!")
+	controller.StartServer()
 }
