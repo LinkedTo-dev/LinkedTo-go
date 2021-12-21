@@ -1,9 +1,7 @@
 package main
 
-import (
-	"fmt"
-)
+import "LinkedTo-go/conf"
 
 func main() {
-	fmt.Println("Hello world!")
+	conf.Init()
 }
