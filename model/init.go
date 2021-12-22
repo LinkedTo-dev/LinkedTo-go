@@ -10,6 +10,10 @@ import (
 
 var DB *gorm.DB
 
+type Model interface {
+	DataStatistic | Map | MapStatistic | News | Policy | Specialist | User
+}
+
 func init() {
 	connectDatabase()
 	migrate()
@@ -26,7 +30,7 @@ func connectDatabase() {
 }
 
 func migrate() {
-	err := DB.AutoMigrate()
+	err := DB.AutoMigrate(&DataStatistic{}, &Map{}, &MapStatistic{}, &News{}, &Policy{}, &Specialist{}, &User{})
 	if err != nil {
 		log.Fatal(err)
 	}

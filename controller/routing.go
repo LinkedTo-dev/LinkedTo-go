@@ -5,5 +5,11 @@ import (
 )
 
 func addRoutes(e *echo.Echo) {
-	// api := e.Group("/api")
+	api := e.Group("/api")
+	api.GET("/map", getMaps)
+	api.GET("/policy", getPolicies)
+	api.GET("/specialist", getSpecialists)
+	api.GET("/news", getNews)
+	api.GET("/mapStatistic", getMapStatistics)
+	api.GET("/dataStatistic", getDataStatistics)
 }
