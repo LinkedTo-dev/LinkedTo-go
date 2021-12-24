@@ -1,8 +1,8 @@
 package model
 
 type DataStatistic struct {
-	Province     string `gorm:"primaryKey;size:50"`
-	IndustryType string
-	Quarter      uint64
-	OutputValue  float64
+	Province     string  `json:"province"`
+	IndustryType string  `json:"industryType"`
+	Quarter      string  `json:"quarter"`
+	OutputValue  float64 `json:"outputValue"`
 }

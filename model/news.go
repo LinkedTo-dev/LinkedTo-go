@@ -1,11 +1,9 @@
 package model
 
-import "time"
-
 type News struct {
-	ID           uint64
-	IndustryType string
-	Title        string
-	Source       string
-	Time         time.Time
+	ID           uint64 `json:"id"`
+	IndustryType string `json:"industryType"`
+	Title        string `json:"title"`
+	Source       string `json:"source"`
+	Time         string `json:"time"`
 }

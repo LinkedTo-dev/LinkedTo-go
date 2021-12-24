@@ -1,10 +1,10 @@
 package model
 
-import "time"
-
 type Policy struct {
-	ID           uint64
-	Title        string
-	Organization string
-	Time         time.Time
+	ID           uint64 `json:"id"`
+	Title        string `json:"title"`
+	IndustryType string `json:"industryType"`
+	Source       string `json:"source"`
+	Organization string `json:"organization"`
+	Time         string `json:"time"`
 }

@@ -1,18 +1,16 @@
 package model
 
 import (
-	"github.com/gofrs/uuid"
 	"time"
 )
 
 type User struct {
-	Username  string `gorm:"primaryKey"`
-	Password  []byte `gorm:"not null;size:72"`
-	UserType  string
-	Gender    string
-	Email     string
-	Tel       string
-	SessionID string
-	SessionId uuid.UUID `gorm:"not null;uniqueIndex;size:36"`
-	UpdatedAt time.Time `gorm:"not null"`
+	Username  string    `gorm:"primaryKey" json:"username"`
+	Password  []byte    `gorm:"not null;size:72" json:"password"`
+	UserType  string    `json:"userType"`
+	Gender    string    `json:"gender"`
+	Email     string    `json:"email"`
+	Tel       string    `json:"tel"`
+	SessionID string    `json:"sessionID"`
+	UpdatedAt time.Time `gorm:"not null" json:"updatedAt"`
 }

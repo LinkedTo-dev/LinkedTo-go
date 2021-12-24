@@ -50,7 +50,7 @@ func register(c echo.Context) error {
 		Username:  username,
 		Password:  passwordHashed,
 		Email:     email,
-		SessionId: uuid.NullUUID{}.UUID, // FIXME: maybe a bug
+		SessionID: uuid.NullUUID{}.UUID.String(), // FIXME: maybe a bug
 	}).Error != nil {
 		return c.String(http.StatusBadRequest, err.Error())
 	}
@@ -82,7 +82,7 @@ func login(c echo.Context) error {
 		return c.NoContent(http.StatusInternalServerError)
 	}
 
-	user.SessionId = sessionID
+	user.SessionID = sessionID.String()
 	model.DB.Save(&user)
 
 	cookie := new(http.Cookie)
