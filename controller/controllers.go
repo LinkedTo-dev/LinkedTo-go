@@ -14,7 +14,7 @@ func getNews(c echo.Context) error {
 }
 
 func getPolicies(c echo.Context) error {
-	return getAll(c, &[]model.Policy{})
+	return getByIndustryType(c, &[]model.Policy{})
 }
 
 func getSpecialists(c echo.Context) error {
